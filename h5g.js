@@ -75,8 +75,7 @@ H5G.generator = function (elem, args, text) {
 
   gen.content = function (text) {
     gen._buffer.push(text);
-    h = gen;
-    return gen;
+    return h = gen;
   };
 
   // Add a closing element corresponding to the last opened
@@ -85,8 +84,7 @@ H5G.generator = function (elem, args, text) {
   // with a single root node within one step.
   gen.x = function () {
     gen._buffer.push(gen._stack.pop());
-    h = gen._stack.length > 0 ? gen : gen._buffer.join('');
-    return h;
+    return h = gen._stack.length > 0 ? gen : gen._buffer.join('');
   };
 
   // Add all remaining closing elements and return joined buffer.
@@ -118,8 +116,7 @@ H5G.generator = function (elem, args, text) {
     if (closing) { gen._stack.push('</' + elem + '>'); }
 
     // Update global state.
-    h = gen;
-    return gen;
+    return h = gen;
   };
 
   return gen[elem](args, text);
