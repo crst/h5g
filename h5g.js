@@ -73,6 +73,12 @@ H5G.generator = function (elem, args, text) {
     }();
   }}
 
+  gen.content = function (text) {
+    gen._buffer.push(text);
+    h = gen;
+    return gen;
+  };
+
   // Add a closing element corresponding to the last opened
   // element. If there is no unclosed element left, return the
   // generated HTML as string. This means we can only generate trees
